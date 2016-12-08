@@ -1,0 +1,23 @@
+{
+  "name": "insta_aggr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aggregateurFlux/insta_aggr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aggregateurFlux/insta_aggr/issues"
+  },
+  "homepage": "https://github.com/aggregateurFlux/insta_aggr#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mocha": "^3.2.0"
+  }
+}
