@@ -1,4 +1,4 @@
-var util = require("../util/util");
+var util = require("../util");
 
 /*
 Fonction appelé lors du Get sur l'index

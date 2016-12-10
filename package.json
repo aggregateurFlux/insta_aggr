@@ -18,6 +18,7 @@
   "homepage": "https://github.com/aggregateurFlux/insta_aggr#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "instagram-node": "^0.5.8",
     "mocha": "^3.2.0"
   }
 }
