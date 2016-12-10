@@ -14,8 +14,6 @@ describe('routes', function() {
 
 			var result = routes.index();
 
-			console.log("result : ", result);
-
 			assert.equal( result, expected);
 		});
 	});

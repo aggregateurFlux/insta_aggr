@@ -1,5 +1,6 @@
 //Dependency 
-var app = require("express")();
+var express = require("express");
+var app = express();
 
 //Perso
 var routes = require("./routes");
@@ -17,5 +18,12 @@ app.get("/", function( request, response) {
 	response.end( result );
 });
 
+//Error
+app.use(function(request, response, next) {
+    response.setHeader('Content-Type', 'text/json');
+    response.send(404, JSON.stringify( 'Page not found !') );
+});
+
+console.log("Server running, please go to : http://localhost:"+port);
 
 app.listen(port);
