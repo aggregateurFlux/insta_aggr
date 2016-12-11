@@ -14,12 +14,20 @@ http://localhost:8000
 # Execute test
 npm test
 
-#Docummentation
+#Documentation
 Pour avoir le file d'actualité d'un utilisateur :
 
 * En GET
 * http://localhost:8000/user/feed
 * parametre : access_token instagram de l'utilisateur dans l'entete de la requete
+* Résultat : en JSON :
+*  {
+* "idAuthor": "4250417618",
+* "authorName": "sylvain",
+* "postCreatedAt": "1481469147",
+* "imageLink": "https://www.instagram.com/p/BN4aY_zjTYv/",
+* "content": ""
+* },
 
 Pour avoir le scope attendu par cette api :
 
