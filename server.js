@@ -39,6 +39,12 @@ app.get("/user/feed", function( request, response ) {
 	routes.feed( request , response, instagram);
 });
 
+//Post Comment
+
+app.post( "/media/:mediaId/addComment" , function( request, response ) {
+	routes.addComment( request, response, instagram );
+});
+
 //Authentification
 app.get("/auth/instagram", function( request , response ) {
 	response.redirect( instagram.get_authorization_url( instagramAuthentification.redirect_uri , { scope : instagramAuthentification.scope, state: 'a state' } ) );
@@ -52,17 +58,13 @@ app.get("/auth/callBack", function( request , response) {
 		} else {
 			console.log('Yay! Access token is ' + result.access_token);
 			console.log(" resutl : ",result);
-			//response.send('You made it!!');
 			response.send( util.toJson( result ) );
 		}
   	});
 });
 
 //Error 404
-app.use(function(request, response, next) {
-    response.setHeader('Content-Type', 'text/json');
-    response.send(404, util.toJson( 'Page not found !') );
-});
+app.use( routes.error );
 
 console.log("Server running, please go to : http://localhost:"+port);
 
