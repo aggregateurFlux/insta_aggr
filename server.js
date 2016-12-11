@@ -64,7 +64,12 @@ app.get("/auth/callBack", function( request , response) {
 });
 
 //Error 404
-app.use( routes.error );
+app.use( function ( request, response, next ) {
+	var result = routes.error( request , response , next);
+
+	response.setHeader('Content-Type', 'text/json');
+    response.send(404, util.toJson( result ) );
+});
 
 console.log("Server running, please go to : http://localhost:"+port);
 
