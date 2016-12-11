@@ -1,8 +1,5 @@
 var util = require("../util");
-
 /*
-Fonction appelé lors du Get sur l'index
-*/
 exports.index = function (request, responses) {
 
 	var obj = {
@@ -11,4 +8,22 @@ exports.index = function (request, responses) {
 	};
 
 	return util.toJson( obj );
+};
+*/
+
+var index = function (request, responses) {
+
+	var obj = {
+		title : "Welcome !",
+		body : "hello world"
+	};
+
+	return util.toJson( obj );
+};
+
+var feed = require("./feed");
+
+module.exports = {
+	index : index,
+	feed : feed
 };
